@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User account and access control details.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "expiryDate": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["active", "disabled"] }
+      },
+      "required": ["userId", "password", "role"]
+    },
+    "AccessKey": {
+      "title": "Access Key",
+      "description": "Subscription keys for users.",
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "durationDays": { "type": "number" },
+        "isUsed": { "type": "boolean" },
+        "usedBy": { "type": "string" }
+      },
+      "required": ["key", "durationDays", "isUsed"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "Collection of app users."
+    },
+    "accessKeys": {
+      "schema": "AccessKey",
+      "description": "Collection of generated access keys."
+    }
+  }
+}

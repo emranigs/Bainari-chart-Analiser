@@ -1,0 +1,11 @@
+{
+  "name": "FX AI Vision Analyzer",
+  "description": "Professional AI-powered trading chart analyzer with pattern recognition and multi-timeframe predictions.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "Image Analysis",
+    "Trading Signals"
+  ]
+}
